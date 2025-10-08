@@ -1,26 +1,27 @@
 import React, { useState } from "react";
+import "./AddTodoForm.css"; // optional, you can remove or change this
 
 export default function AddTodoForm({ onAdd }) {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (text.trim() === "") return;
+
+    // Call the function passed from TodosPage.js
     onAdd(text);
     setText("");
   };
 
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
-      <label htmlFor="new-todo" className="sr-only">New todo</label>
+    <form className="add-todo-form" onSubmit={handleSubmit}>
       <input
-        id="new-todo"
-        className="input"
         type="text"
-        placeholder="Enter task..."
+        placeholder="Add a new task..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <button className="btn" type="submit">Add</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
