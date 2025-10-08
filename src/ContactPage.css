@@ -1,0 +1,5 @@
+/* Contact page */
+.contact-page { background: var(--card); padding: 20px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.contact-form .form-row { display: flex; gap: 12px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; flex: 1; }
+label { font-size: 13px; color: var(--muted); }

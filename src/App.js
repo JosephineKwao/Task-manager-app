@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+import TodosPage from "./TodosPage";
+import ContactPage from "./ContactPage";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="navbar">
+        <div className="brand">Task Manager</div>
+        <nav className="nav-links">
+          <Link to="/todos" className="nav-link">Todos</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
+        </nav>
       </header>
+
+      <main className="container">
+        <Routes>
+          <Route path="/todos" element={<TodosPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/" element={<Navigate replace to="/todos" />} />
+        </Routes>
+      </main>
+
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Josephine Kwao — Task Manager</p>
+      </footer>
     </div>
   );
 }
-
-export default App;

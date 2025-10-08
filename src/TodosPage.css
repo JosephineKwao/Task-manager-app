@@ -1,0 +1,31 @@
+/* TodosPage.css - layout + todo styles */
+.todos-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* left column */
+.left-col { background: var(--card); padding: 16px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.side-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+/* right column */
+.right-col { background: var(--card); padding: 16px; border-radius: 10px; min-height: 200px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+
+.filter-bar { display: flex; gap: 8px; margin-bottom: 12px; }
+.filter-bar .btn { background: transparent; color: #333; border: 1px solid #e6e9f2; }
+.filter-bar .btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+/* Todo list */
+.todo-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.todo-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-radius: 8px; border: 1px solid #f0f2f7; }
+.todo-left { display: flex; align-items: center; gap: 10px; }
+.todo-text { font-size: 15px; }
+.todo-item.completed .todo-text { text-decoration: line-through; color: var(--muted); }
+
+/* empty */
+.empty { color: var(--muted); padding: 12px; }
+
+/* small */
+.todo-item .btn.small { background: transparent; color: var(--danger); border: 1px solid rgba(239,68,68,0.08); }
